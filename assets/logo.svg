@@ -1,0 +1,17 @@
+<svg width="130" height="34" viewBox="0 0 130 34" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ballGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C468"/>
+      <stop offset="55%" stop-color="#12734A"/>
+      <stop offset="100%" stop-color="#081310"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F0DFA8"/>
+      <stop offset="100%" stop-color="#D4AF37"/>
+    </linearGradient>
+  </defs>
+  <circle cx="15" cy="17" r="14" fill="url(#ballGrad)"/>
+  <path d="M 6 8 Q 15 17 6 26" stroke="#F0DFA8" stroke-width="1.2" fill="none" opacity="0.85"/>
+  <path d="M 24 8 Q 15 17 24 26" stroke="#F0DFA8" stroke-width="1.2" fill="none" opacity="0.85"/>
+  <text x="35" y="22" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="15" fill="url(#textGrad)">Cricbuzz</text>
+</svg>
