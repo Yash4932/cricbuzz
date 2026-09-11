@@ -9,7 +9,6 @@ them, so view files use plain ASCII names and all display text lives here.
 """
 
 import streamlit as st 
-st.write("DEBUG — secrets Streamlit sees:", dict(st.secrets))
 
 import config
 from utils.theme import apply_theme
