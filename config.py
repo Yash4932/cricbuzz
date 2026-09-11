@@ -10,14 +10,26 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv()
+def _get_secret(key: str, default: str = "") -> str:
+    """Env var first, then Streamlit Cloud's st.secrets, then default."""
+    val = os.getenv(key)
+    if val:
+        return val
+    try:
+        import streamlit as st
+        if key in st.secrets:
+            return st.secrets[key]
+    except Exception:
+        pass
+    return default
 
 BASE_DIR = Path(__file__).resolve().parent
 
 # ---------------------------------------------------------------------------
 # Cricbuzz API (RapidAPI) configuration
 # ---------------------------------------------------------------------------
-CRICBUZZ_API_KEY = os.getenv("CRICBUZZ_API_KEY", "")
-CRICBUZZ_API_HOST = os.getenv("CRICBUZZ_API_HOST", "cricbuzz-cricket.p.rapidapi.com")
+CRICBUZZ_API_KEY = _get_secret("CRICBUZZ_API_KEY", "")
+CRICBUZZ_API_HOST = _get_secret("CRICBUZZ_API_HOST", "cricbuzz-cricket.p.rapidapi.com")
 CRICBUZZ_BASE_URL = f"https://{CRICBUZZ_API_HOST}"
 
 CRICBUZZ_HEADERS = {
